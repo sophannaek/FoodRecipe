@@ -79,12 +79,26 @@ None
 ```
 
 * Success Response: 
-** Code: 200
-    Content: `{message: You successfully added a recipe}`
+Code: 200
+Content: `{message: You successfully added a recipe}`
 
 * Error Response: 
-** Code: 401
-    Content: `{message: There is already a recipe by that name!}`
+Code: 401
+Content: `{message: There is already a recipe by that name!}`
+
+* Code Sample: 
+```bash
+ $.ajax({
+    url: "/add_recipe",
+    dataType: "json",
+    type : "POST",
+    headers:{"Authorization": "Bearer "+ token},
+    success : function(r) {
+      console.log(r);
+    }
+  });
+```
+
 
 
 ## Update an existing recipe
