@@ -109,12 +109,13 @@ None
  ```
 
 * Success Response: 
-** Code: 200
-    Content: `{message: You successfully updated a recipe}`
+Code: 200
+Content: `{message: You successfully updated a recipe}`
 
 * Error Response: 
-** Code: 402
-    Content: `{message: That recipe does not exist!}`
+Code: 402, 405
+Content: `{message: That recipe does not exist!}` or `{"message":"Method Not Allowed}`
+
 
 
 ## Delete a recipe
@@ -131,11 +132,11 @@ None
 `None`
 
 * Success Response: 
-** Code: 202
-    Content: `{message: You successfully deleted a recipe}`
+Code: 202
+Content: `{message: You successfully deleted a recipe}`
 
 * Error Response: 
-** Code: 404
+Code: 404
     Content: `{message: That recipe does not exist!}`
 
 
@@ -161,12 +162,12 @@ None
  ```
 
 * Success Response: 
-** Code: 200
-    Content: `{message: You successfully updated a recipe}`
+Code: 200
+Content: `{message: You successfully updated a recipe}`
 
 * Error Response: 
-** Code: 401
-    Content: `{message: That recipe does not exist!}`
+Code: 401
+Content: `{message: That recipe does not exist!}`
 
 ## User Registration
 * URL 
@@ -188,12 +189,13 @@ region= [String]
 ```
 
 * Success Response: 
-** Code: 201
-    Content: `{message: User created successfully}`
+Code: 201
+Content: `{message: User created successfully}`
 
 * Error Response: 
-** Code: 401
-    Content: `{message: That email already exists!}`
+Code: 401
+Content: `{message: That email already exists!}` or `{"message": "Missing Authorization Header"}`
+
 
 
 ## User Login
@@ -213,12 +215,12 @@ password = [String]
 ```
 
 * Success Response: 
-** Code: 201
-    Content: `{message: Login succeeded!}`
+Code: 200
+Content: `{"access_token": access_token, "message: "Login succeeded!"}`
 
 * Error Response: 
-** Code: 401
-    Content: `{message: Bad email or password}`
+Code: 401
+Content: `{"message": "Bad email or password"}`
 
 ## Password Retrieval 
 * URL 
@@ -238,12 +240,12 @@ password = [String]
 ```
 
 * Success Response: 
-** Code: 201
-    Content: `{message: Password sent to 'email'}`
+Code: 201
+Content: `{message: Password sent to 'email'}`
 
 * Error Response: 
-** Code: 401
-    Content: `{message: That email doesn't exist!}`
+Code: 401
+Content: `{message: That email doesn't exist!}`
 
 
 
